@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServidorWcf" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServidorWcf_SeleccionarTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTodos" />
+  </wsdl:message>
+  <wsdl:message name="IServidorWcf_SeleccionarTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServidorWcf_Insertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar" />
+  </wsdl:message>
+  <wsdl:message name="IServidorWcf_Insertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServidorWcf_Actualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="IServidorWcf_Actualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServidorWcf_BuscarServidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarServidor" />
+  </wsdl:message>
+  <wsdl:message name="IServidorWcf_BuscarServidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarServidorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServidorWcf">
+    <wsdl:operation name="SeleccionarTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServidorWcf/SeleccionarTodos" message="tns:IServidorWcf_SeleccionarTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServidorWcf/SeleccionarTodosResponse" message="tns:IServidorWcf_SeleccionarTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServidorWcf/Insertar" message="tns:IServidorWcf_Insertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServidorWcf/InsertarResponse" message="tns:IServidorWcf_Insertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServidorWcf/Actualizar" message="tns:IServidorWcf_Actualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServidorWcf/ActualizarResponse" message="tns:IServidorWcf_Actualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarServidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServidorWcf/BuscarServidor" message="tns:IServidorWcf_BuscarServidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServidorWcf/BuscarServidorResponse" message="tns:IServidorWcf_BuscarServidor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServidorWcf" type="tns:IServidorWcf">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarTodos">
+      <soap:operation soapAction="http://tempuri.org/IServidorWcf/SeleccionarTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar">
+      <soap:operation soapAction="http://tempuri.org/IServidorWcf/Insertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <soap:operation soapAction="http://tempuri.org/IServidorWcf/Actualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarServidor">
+      <soap:operation soapAction="http://tempuri.org/IServidorWcf/BuscarServidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServidorWcf">
+    <wsdl:port name="BasicHttpBinding_IServidorWcf" binding="tns:BasicHttpBinding_IServidorWcf">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/ServiciosWcf/ServidorWcf/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
